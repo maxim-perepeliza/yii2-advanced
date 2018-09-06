@@ -28,7 +28,10 @@
         "yiisoft/yii2-faker": "~2.0.0",
 
         "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1"
+        "codeception/verify": "~0.3.1",
+
+        "symfony/dom-crawler": "2.8",
+        "symfony/css-selector": "2.8"
     },
     "config": {
         "process-timeout": 1800,
