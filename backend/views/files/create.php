@@ -4,19 +4,18 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Cars */
+/* @var $model common\models\Files */
 
-$this->title = Yii::t('app', 'Create Cars');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cars'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Files');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Files'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="cars-create">
+<div class="files-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
-        'modelsBody' => $modelsBody
     ]) ?>
 
 </div>

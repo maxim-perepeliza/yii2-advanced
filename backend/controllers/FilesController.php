@@ -3,18 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Cars;
-use backend\models\CarsSearch;
+use common\models\Files;
+use common\models\FilesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\widgets\ActiveForm;
-use common\models\ModelsCar;
-
+use yii\web\UploadedFile;
 /**
- * CarsController implements the CRUD actions for Cars model.
+ * FilesController implements the CRUD actions for Files model.
  */
-class CarsController extends Controller
+class FilesController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -32,12 +30,12 @@ class CarsController extends Controller
     }
 
     /**
-     * Lists all Cars models.
+     * Lists all Files models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CarsSearch();
+        $searchModel = new FilesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +45,7 @@ class CarsController extends Controller
     }
 
     /**
-     * Displays a single Cars model.
+     * Displays a single Files model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,61 +58,35 @@ class CarsController extends Controller
     }
 
     /**
-     * Creates a new Cars model.
+     * Creates a new Files model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Cars();
-        $modelsBody = [new ModelsCar];
+        $model = new Files();
+
         if ($model->load(Yii::$app->request->post())) {
-            $modelsBody = Model::createMultiple(ModelsCar::classname());
-            Model::loadMultiple($modelsBody, Yii::$app->request->post());
-
-            // ajax validation
-            if (Yii::$app->request->isAjax) {
-                Yii::$app->response->format = Response::FORMAT_JSON;
-                return ArrayHelper::merge(
-                    ActiveForm::validateMultiple($modelsBody),
-                    ActiveForm::validate($model)
-                );
-            }
-
-            // validate all models
-            $valid = $model->validate();
-            $valid = Model::validateMultiple($modelsBody) && $valid;
             
-            if ($valid) {
-                $transaction = \Yii::$app->db->beginTransaction();
-                try {
-                    if ($flag = $model->save(false)) {
-                        foreach ($modelsBody as $modelBody) {
-                            if (! ($flag = $modelBody->save(false))) {
-                                $transaction->rollBack();
-                                break;
-                            }
-                        }
-                    }
-                    if ($flag) {
-                        $transaction->commit();
-                        return $this->redirect(['view', 'id' => $model->id]);
-                    }
-                } catch (Exception $e) {
-                    $transaction->rollBack();
-                }
-            }
+            $model->file = UploadedFile::getInstance($model, 'file');
+            $model->file->saveAs('uploads/'.$model->file->baseName.'.'.$model->file->extension);
+            $model->path_upload = 'uploads/'.$model->file->baseName.'.'.$model->file->extension;            
+            
+            $model->date_create = date("Y:m:d H:i:s");
+            $model->deleted = 0;
+            $model->type =$model->file->extension;
+            $model->save();
+            
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
-            'modelsBody' => (empty($modelsBody)) ? [new ModelsCar] : $modelsBody
         ]);
     }
 
-
     /**
-     * Updates an existing Cars model.
+     * Updates an existing Files model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -134,7 +106,7 @@ class CarsController extends Controller
     }
 
     /**
-     * Deletes an existing Cars model.
+     * Deletes an existing Files model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -148,15 +120,15 @@ class CarsController extends Controller
     }
 
     /**
-     * Finds the Cars model based on its primary key value.
+     * Finds the Files model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Cars the loaded model
+     * @return Files the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Cars::findOne($id)) !== null) {
+        if (($model = Files::findOne($id)) !== null) {
             return $model;
         }
 
