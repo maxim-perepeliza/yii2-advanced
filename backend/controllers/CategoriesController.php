@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\ModelsCar;
-use common\models\ModelsCarSearch;
+use common\models\Categories;
+use common\models\CategoriesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ModelsCarController implements the CRUD actions for ModelsCar model.
+ * CategoriesController implements the CRUD actions for Categories model.
  */
-class ModelsCarController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,15 +30,12 @@ class ModelsCarController extends Controller
     }
 
     /**
-     * Lists all ModelsCar models.
+     * Lists all Categories models.
      * @return mixed
      */
     public function actionIndex()
     {
-        if (!Yii::$app->user->can("admin")) {
-            throw new \yii\web\ForbiddenHttpException('You are not allowed to perform this action.');
-        }
-        $searchModel = new ModelsCarSearch();
+        $searchModel = new CategoriesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +45,7 @@ class ModelsCarController extends Controller
     }
 
     /**
-     * Displays a single ModelsCar model.
+     * Displays a single Categories model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +58,13 @@ class ModelsCarController extends Controller
     }
 
     /**
-     * Creates a new ModelsCar model.
+     * Creates a new Categories model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ModelsCar();
+        $model = new Categories();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -79,7 +76,7 @@ class ModelsCarController extends Controller
     }
 
     /**
-     * Updates an existing ModelsCar model.
+     * Updates an existing Categories model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -99,7 +96,7 @@ class ModelsCarController extends Controller
     }
 
     /**
-     * Deletes an existing ModelsCar model.
+     * Deletes an existing Categories model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -113,15 +110,15 @@ class ModelsCarController extends Controller
     }
 
     /**
-     * Finds the ModelsCar model based on its primary key value.
+     * Finds the Categories model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return ModelsCar the loaded model
+     * @return Categories the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ModelsCar::findOne($id)) !== null) {
+        if (($model = Categories::findOne($id)) !== null) {
             return $model;
         }
 
