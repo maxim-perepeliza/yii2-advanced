@@ -10,6 +10,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\widgets\ActiveForm;
 use common\models\ModelsCar;
+use yii\base\Model;
+use yii\helpers\ArrayHelper;
 
 /**
  * CarsController implements the CRUD actions for Cars model.
@@ -80,22 +82,22 @@ class CarsController extends Controller
                     ActiveForm::validate($model)
                 );
             }
-
             // validate all models
             $valid = $model->validate();
+            $modelBody = reset($modelsBody);
+            $dateCreate = date("Y-m-d H:i:s");
+            $modelBody->date_create = $dateCreate;
+            $modelBody->deleted = 0;
             $valid = Model::validateMultiple($modelsBody) && $valid;
-            
             if ($valid) {
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
-                    if ($flag = $model->save(false)) {
-                        foreach ($modelsBody as $modelBody) {
-                            if (! ($flag = $modelBody->save(false))) {
-                                $transaction->rollBack();
-                                break;
-                            }
-                        }
+                    if (!($flag = $modelBody->save(false))) {
+                        $transaction->rollBack();
                     }
+                    $modelBody->save(false);
+                    $model->model_id = $modelBody->id;
+                    $flag = $model->save(false);
                     if ($flag) {
                         $transaction->commit();
                         return $this->redirect(['view', 'id' => $model->id]);
@@ -105,7 +107,6 @@ class CarsController extends Controller
                 }
             }
         }
-
         return $this->render('create', [
             'model' => $model,
             'modelsBody' => (empty($modelsBody)) ? [new ModelsCar] : $modelsBody
@@ -123,13 +124,52 @@ class CarsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $modelBody = $model->model_id;
+        $modelBody = ModelsCar::findOne($modelBody);
+        $modelBody = array($modelBody);
+        if ($model->load(Yii::$app->request->post())) {
+            $oldIDs = ArrayHelper::map($modelBody, 'id', 'id');
+            $modelBody = Model::createMultiple(ModelsCar::classname(), $modelBody);
+            Model::loadMultiple($modelBody, Yii::$app->request->post());
+            $deletedIDs = array_diff($oldIDs, array_filter(ArrayHelper::map($modelBody, 'id', 'id')));
+            // ajax validation
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ArrayHelper::merge(
+                    ActiveForm::validateMultiple($modelBody),
+                    ActiveForm::validate($model)
+                );
+            }
+            // validate all models
+            $valid = $model->validate();
+            $valid = Model::validateMultiple($modelBody) && $valid;
+            if ($valid) {
+                $transaction = \Yii::$app->db->beginTransaction();
+                try {
+                    if ($flag = $model->save(false)) {
+                        if (! empty($deletedIDs)) {
+                            ModelsCar::deleteAll(['id' => $deletedIDs]);
+                        }
+                        foreach ($modelBody as $modelAddress) {
+                            $modelAddress->id = $model->model_id;
+                            if (! ($flag = $modelAddress->save(false))) {
+                                $transaction->rollBack();
+                                break;
+                            }
+                        }
+                    }
+                    if ($flag) {
+                        $transaction->commit();
+                        return $this->redirect(['view', 'id' => $model->id]);
+                    }
+                } catch (Exception $e) {
+                    $transaction->rollBack();
+                }
+            }
         }
-
         return $this->render('update', [
             'model' => $model,
+            'modelsBody' => (empty($modelBody)) ? [new ModelsCar] : $modelBody
         ]);
     }
 
