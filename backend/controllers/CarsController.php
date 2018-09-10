@@ -10,6 +10,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\widgets\ActiveForm;
 use common\models\ModelsCar;
+use common\models\Categories;
+use common\models\BodyTypes;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
 
@@ -70,6 +72,8 @@ class CarsController extends Controller
     {
         $model = new Cars();
         $modelsBody = [new ModelsCar];
+        $categoriesBody = [new Categories];
+        $bodyTypes = [new BodyTypes];
         if ($model->load(Yii::$app->request->post())) {
             $modelsBody = Model::createMultiple(ModelsCar::classname());
             Model::loadMultiple($modelsBody, Yii::$app->request->post());
@@ -109,7 +113,9 @@ class CarsController extends Controller
         }
         return $this->render('create', [
             'model' => $model,
-            'modelsBody' => (empty($modelsBody)) ? [new ModelsCar] : $modelsBody
+            'modelsBody' => (empty($modelsBody)) ? [new ModelsCar] : $modelsBody,
+            'categoriesBody' => (empty($categoriesBody)) ? [new Categories] : $categoriesBody,
+            'bodyTypes' => (empty($bodyTypes)) ? [new BodyTypes] : $bodyTypes
         ]);
     }
 
