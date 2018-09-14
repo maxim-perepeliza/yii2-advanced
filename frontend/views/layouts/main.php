@@ -43,8 +43,8 @@ AppAsset::register($this);
         ['label' => Yii::t('app', 'Блог'), 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => Yii::t('app', 'Регистрация'), 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => Yii::t('app', 'Ввойти'), 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')

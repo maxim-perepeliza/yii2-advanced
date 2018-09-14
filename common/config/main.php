@@ -13,5 +13,15 @@ return [
 		'<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 	    ],
 	],
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    //'forceTranslation' => true,
+//                    'basePath' => '@common/messages',
+                    'sourceLanguage' => 'ru',
+                ]
+            ],
+        ],
     ],
 ];

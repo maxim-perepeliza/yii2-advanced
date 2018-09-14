@@ -17,9 +17,11 @@ return [
         'i18n' => [
             'translations' => [
                 'app' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'class' => 'yii\i18n\PhpMessageSource',
+                    'class' => 'yii\i18n\DbMessageSource',
                     //'forceTranslation' => true,
-                    'basePath' => '@common/messages',
+//                    'basePath' => '@common/messages',
+                    'sourceLanguage' => 'ru',
                 ],
             ],
         ],

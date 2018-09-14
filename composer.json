@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "amnah/yii2-user": "^5.0",
         "wbraganca/yii2-dynamicform": "*",
-        "dmstr/yii2-adminlte-asset": "^2.1"
+        "dmstr/yii2-adminlte-asset": "^2.1",
+        "omgdef/yii2-multilingual-behavior": "~2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
