@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use wbraganca\dynamicform\DynamicFormWidget;
+use mihaildev\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Cars */
@@ -134,7 +135,13 @@ use wbraganca\dynamicform\DynamicFormWidget;
             </div>
             <?php DynamicFormWidget::end(); ?>
     
-    <?= $form->field($model, 'mark')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'mark')->widget(CKEditor::className(), ['editorOptions' => [
+        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+        'inline' => false, //по умолчанию false
+    ],]); ?>
+    
+    
+    <?php // $form->field($model, 'mark')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'date_release')->textInput() ?>
 
