@@ -140,6 +140,16 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    
+    public function beforeAction($action){
+        switch ($action->id){
+            case 'about' : $this->layout = $action->id;
+                break;
+            default : $this->layout = 'main';
+                break;
+        }
+        return parent::beforeAction($action);
+    }
 
     /**
      * Signs user up.
