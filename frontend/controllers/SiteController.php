@@ -115,6 +115,7 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+        $this->layout = 'contact';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
@@ -141,7 +142,7 @@ class SiteController extends Controller
         return $this->render('about');
     }
     
-    public function beforeAction($action){
+   /* public function beforeAction($action){
         switch ($action->id){
             case 'about' : $this->layout = $action->id;
                 break;
@@ -149,7 +150,7 @@ class SiteController extends Controller
                 break;
         }
         return parent::beforeAction($action);
-    }
+    }*/
 
     /**
      * Signs user up.

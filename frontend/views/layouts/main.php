@@ -39,8 +39,8 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => Yii::t('app', 'О нас'), 'url' => ['/site/about']],
-        ['label' => Yii::t('app', 'Блог'), 'url' => ['/site/contact']],
+        //['label' => Yii::t('app', 'О нас'), 'url' => ['/site/about']],
+        ['label' => Yii::t('app', 'Контакты'), 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => Yii::t('app', 'Регистрация'), 'url' => ['/site/signup']];

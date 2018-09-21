@@ -7,9 +7,11 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use app\assets\MyClassAsset;
 
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
+MyClassAsset::register($this);
 ?>
 <div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
