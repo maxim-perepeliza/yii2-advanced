@@ -30,7 +30,12 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
+                    ['label' => 'Модели', 'options' => ['class' => 'header']],
+                    ['label' => 'Автомобили', 'icon' => 'file-code-o', 'url' => ['/cars']],
+                    ['label' => 'Модели авто', 'icon' => 'file-code-o', 'url' => ['/models-car']],
+                    ['label' => 'Объявления', 'icon' => 'file-code-o', 'url' => ['/advert']],
+                    ['label' => 'Типы кузовов', 'icon' => 'file-code-o', 'url' => ['/body-types']],
+                    ['label' => 'Категории', 'icon' => 'file-code-o', 'url' => ['/categories']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
