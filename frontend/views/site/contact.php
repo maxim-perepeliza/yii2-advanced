@@ -13,37 +13,16 @@ $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 MyClassAsset::register($this);
 ?>
-<div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-    </p>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6 animate-box">
-                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
-                    <div class="col-md-12">
-                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
-                    </div>
-                    <?= $form->field($model, 'email') ?>
-
-                    <?= $form->field($model, 'subject') ?>
-
-                    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
-
-                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                    ]) ?>
-
-                    <div class="form-group">
-                        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                    </div>
-
-                <?php ActiveForm::end(); ?>
-            </div>
-        </div>
+<h3>Get In Touch</h3>                       
+<?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+    <?= $form->field($model, 'name')->textInput(['autofocus' => true, 'placeholder' => 'Your firstname']) ?>
+    <?= $form->field($model, 'email')->textInput(['placeholder' => 'Your email']) ?>
+    <?= $form->field($model, 'subject')->textInput(['placeholder' => 'Subject content']) ?>
+    <?= $form->field($model, 'body')->textarea(['rows' => 6, 'placeholder' => 'Text message']) ?>
+    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+    ]) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
     </div>
-
-</div>
+<?php ActiveForm::end(); ?>
