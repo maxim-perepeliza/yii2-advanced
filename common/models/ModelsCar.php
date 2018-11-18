@@ -31,8 +31,8 @@ class ModelsCar extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'date_create'], 'required'],
-            [['date_create', 'date_create_utc'], 'safe'],
+            [['name'], 'required'],
+            [['date_create', 'date_create_utc', 'date_create'], 'safe'],
             [['deleted'], 'integer'],
             [['name'], 'string', 'max' => 30],
         ];

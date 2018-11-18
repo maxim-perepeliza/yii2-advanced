@@ -4,15 +4,17 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use wbraganca\dynamicform\DynamicFormWidget;
 use mihaildev\ckeditor\CKEditor;
+use backend\models\UploadForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Cars */
 /* @var $form yii\widgets\ActiveForm */
+$uploadForm = new UploadForm();
 ?>
 
 <div class="cars-form">
    
-    <?php $form = ActiveForm::begin(['id' => 'dynamic-form']); ?>
+    <?php $form = ActiveForm::begin(['id' => 'dynamic-form', 'options' => ['enctype' => 'multipart/form-data']]); ?>
 
      <?php DynamicFormWidget::begin([
                 'widgetContainer' => 'dynamicform_wrapper', // required: only alphanumeric characters plus "_" [A-Za-z0-9_]
@@ -114,7 +116,7 @@ use mihaildev\ckeditor\CKEditor;
             <?php foreach ($bodyTypes as $i => $bodyType): ?>
                 <div class="item panel panel-default"><!-- widgetBody -->
                     <div class="panel-heading">
-                        <h3 class="panel-title pull-left">Model</h3>
+                        <h3 class="panel-title pull-left">Body type</h3>
                         <div class="pull-right">
                             <button type="button" class="add-item btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
                             <button type="button" class="remove-item btn btn-danger btn-xs"><i class="glyphicon glyphicon-minus"></i></button>
@@ -135,13 +137,7 @@ use mihaildev\ckeditor\CKEditor;
             </div>
             <?php DynamicFormWidget::end(); ?>
     
-    <?= $form->field($model, 'mark')->widget(CKEditor::className(), ['editorOptions' => [
-        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-        'inline' => false, //по умолчанию false
-    ],]); ?>
-    
-    
-    <?php // $form->field($model, 'mark')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'mark')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'date_release')->textInput() ?>
 
@@ -153,7 +149,7 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'body_type_id')->textInput() ?>
 
-    <?= $form->field($model, 'engine_capacity')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'engine_capacity')->textInput(['maxlength' => true])->label('Мощность двигателя') ?>
 
     <?= $form->field($model, 'fuel_type')->textInput(['maxlength' => true]) ?>
 
@@ -171,13 +167,20 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'amount_deposit')->textInput() ?>
 
-    <?= $form->field($model, 'image_id')->textInput() ?>
+    <?php // $form->field($model, 'image_id')->textInput() ?>
+    
+    <?= $form->field($uploadForm, 'file')->fileInput() ?>
 
     <?= $form->field($model, 'date_create')->textInput() ?>
 
     <?= $form->field($model, 'date_create_utc')->textInput() ?>
 
     <?= $form->field($model, 'deleted')->textInput() ?>
+    
+    <?php /* $form->field($model, 'description')->widget(CKEditor::className(), ['editorOptions' => [
+        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+        'inline' => false, //по умолчанию false
+    ],]); */ ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

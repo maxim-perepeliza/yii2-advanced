@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Cars;
-use backend\models\CarsSearch;
+use common\models\CarsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -14,6 +14,8 @@ use common\models\Categories;
 use common\models\BodyTypes;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
+use backend\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
  * CarsController implements the CRUD actions for Cars model.
@@ -96,6 +98,16 @@ class CarsController extends Controller
             if ($valid) {
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
+                    $imageCar = new UploadForm();
+
+                    if (Yii::$app->request->isPost) {
+                        $imageCar->file = UploadedFile::getInstance($imageCar, 'file');
+
+                        if ($imageCar->file && $imageCar->validate()) {                
+                            $imageCar->file->saveAs('uploads/' . $imageCar->file->baseName . '.' . $imageCar->file->extension);
+                        }
+                    }
+                    
                     if (!($flag = $modelBody->save(false))) {
                         $transaction->rollBack();
                     }
@@ -133,6 +145,15 @@ class CarsController extends Controller
         $modelBody = $model->model_id;
         $modelBody = ModelsCar::findOne($modelBody);
         $modelBody = array($modelBody);
+        
+        $categoriesBody = $model->category_id;
+        $categoriesBody = Categories::findOne($categoriesBody);
+        $categoriesBody = array($categoriesBody);
+        
+        $bodyTypes = $model->body_type_id;
+        $bodyTypes = BodyTypes::findOne($bodyTypes);
+        $bodyTypes = array($bodyTypes);
+        
         if ($model->load(Yii::$app->request->post())) {
             $oldIDs = ArrayHelper::map($modelBody, 'id', 'id');
             $modelBody = Model::createMultiple(ModelsCar::classname(), $modelBody);
@@ -175,7 +196,9 @@ class CarsController extends Controller
         }
         return $this->render('update', [
             'model' => $model,
-            'modelsBody' => (empty($modelBody)) ? [new ModelsCar] : $modelBody
+            'modelsBody' => (empty($modelBody)) ? [new ModelsCar] : $modelBody,
+            'categoriesBody' => (empty($categoriesBody)) ? [new Categories] : $categoriesBody,
+            'bodyTypes' => (empty($bodyTypes)) ? [new BodyTypes] : $bodyTypes
         ]);
     }
 

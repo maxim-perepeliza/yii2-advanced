@@ -68,8 +68,10 @@ class ModelsCarController extends Controller
     public function actionCreate()
     {
         $model = new ModelsCar();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $model->load(Yii::$app->request->post());
+        $model->date_create = date('Y-m-d H:i:s');
+        $model->deleted = 0;
+        if ($model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

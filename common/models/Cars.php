@@ -52,8 +52,8 @@ class Cars extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['mark', 'transmition', 'count_doors', 'count_seats', 'body_type_id', 'engine_capacity', 'fuel_type', 'engine_power', 'fuel_consumption', 'conditioner_available', 'category_id', 'model_id', 'count_cars', 'amount_deposit', 'image_id', 'date_create'], 'required'],
-            [['date_release', 'date_create', 'date_create_utc'], 'safe'],
+            [['mark', 'transmition', 'count_doors', 'count_seats', 'body_type_id', 'engine_capacity', 'fuel_type', 'engine_power', 'fuel_consumption', 'conditioner_available', 'category_id', 'model_id', 'count_cars', 'amount_deposit', 'date_create'], 'required'],
+            [['date_release', 'date_create', 'date_create_utc', 'image_id'], 'safe'],
             [['count_doors', 'count_seats', 'body_type_id', 'category_id', 'model_id', 'count_cars', 'amount_deposit', 'image_id', 'deleted'], 'integer'],
             [['mark'], 'string', 'max' => 30],
             [['transmition', 'fuel_type', 'fuel_consumption'], 'string', 'max' => 15],
