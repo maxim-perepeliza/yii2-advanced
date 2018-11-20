@@ -154,7 +154,7 @@ use yii\captcha\Captcha;
 				</div>
 			</div>
                         <div class="row">
-				<div id="map_contact" class="col-md-12">
+                            <div id="map_contact" style="height: 400px !important;" class="col-md-12">
 				</div>
 			</div>
 		</div>
@@ -231,14 +231,14 @@ use yii\captcha\Captcha;
         <script>
             var locations = [
                     {
-                        lng: 30.250555299999974,
-                        lat: 50.5270552,
-                        address: 'Электроинструментальный 6а, Харків, Україна'
+                        lng: 36.294989,
+                        lat: 50.0405461,
+                        address: 'Электроинструментальный 6а, Харків, Україна. Да, аренда авто тут!'
                     }    
             ];
             var map = new google.maps.Map(document.getElementById('map_contact'), {
-                zoom: 12,
-                center: {lat: 50.5270552, lng: 30.250555299999974}
+                zoom: 17,
+                center: {lat: 50.0403958, lng: 36.2944559}
             }); 
             console.log(locations);
             locations.forEach(function(element) {
