@@ -8,6 +8,8 @@ use common\models\AdvertSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\Cars;
+use common\models\User;
 
 /**
  * AdvertController implements the CRUD actions for Advert model.
@@ -69,10 +71,31 @@ class AdvertController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
+        
+        $cars = Cars::find()->where(['>', 'count_cars', 0])->all();
+        $cars = $this->rebuildArrayForDropDown($cars);
+        
+        $users = User::find()->all();
+        $users = $this->rebuildArrayForDropDown($users);
+        
         return $this->render('create', [
             'model' => $model,
+            'cars'  => $cars,
+            'users' => $users,
         ]);
+    }
+    
+    private function rebuildArrayForDropDown($listModels) {
+        $rebuildedArray = array();
+        foreach ($listModels as $id => $modelData) {
+            switch($modelData->tableName()){
+                case 'cars': $rebuildedArray[$id] = $modelData->mark . '. Остаток(' . $modelData->count_cars . ')'; break;
+                case '{{%user}}': $rebuildedArray[$id] = $modelData->username; break;
+                default: $rebuildedArray[$id] = $modelData->name; break;
+            }
+            
+        }
+        return $rebuildedArray;
     }
 
     /**

@@ -30,7 +30,8 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Модели', 'options' => ['class' => 'header']],
+                    ['label' => 'Модели в системе', 'options' => ['class' => 'header']],
+                    ['label' => 'Объявления', 'icon' => 'file-code-o', 'url' => ['/advert']],
                     ['label' => 'Автомобили', 'icon' => 'file-code-o', 'url' => ['/cars']],
                     ['label' => 'Модели авто', 'icon' => 'file-code-o', 'url' => ['/models-car']],
                     ['label' => 'Объявления', 'icon' => 'file-code-o', 'url' => ['/advert']],
