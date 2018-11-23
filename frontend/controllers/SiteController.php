@@ -143,6 +143,28 @@ class SiteController extends Controller
         return $this->render('about');
     }
     
+    /**
+     * Displays auto list page.
+     *
+     * @return mixed
+     */
+    public function actionAutoList()
+    {
+        $this->layout = 'auto-list';
+        return $this->render('auto-list');
+    }
+    
+    /**
+     * Displays auto find page.
+     *
+     * @return mixed
+     */
+    public function actionAutoFind()
+    {
+        $this->layout = 'auto-find';
+        return $this->render('auto-find');
+    }
+    
    /* public function beforeAction($action){
         switch ($action->id){
             case 'about' : $this->layout = $action->id;

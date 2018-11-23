@@ -92,13 +92,11 @@ use yii\captcha\Captcha;
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li><a href="/">Catalog cars</a></li>
+						<li><a href="/site/auto-list">Catalog cars</a></li>
 						<li class="has-dropdown">
-							<a href="/services">Services</a>
+							<a href="#">Services</a>
 							<ul class="dropdown">
-								<li><a href="#">Catalog cars</a></li>
-								<li><a href="#">Wedding Celebration</a></li>
-								<li><a href="#">Birthday's Celebration</a></li>
+								<li><a href="/site/auto-find">Find Auto</a></li>
 							</ul>
 						</li>
 						<li class="active"><a href="/contact">Contact</a></li>
