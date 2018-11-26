@@ -67,8 +67,14 @@ class AdvertController extends Controller
     public function actionCreate()
     {
         $model = new Advert();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $model->load(Yii::$app->request->post());
+        $model->date_create = date('Y-m-d H:i:s');
+        $model->date_create_utc = date('Y-m-d H:i:s');
+        $model->date_modified = date('Y-m-d H:i:s');
+        $model->deleted = 0;
+        $model->car_id = $model->car_id[0];
+        $model->author_id = $model->author_id[0];
+        if ($model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
         
@@ -87,11 +93,11 @@ class AdvertController extends Controller
     
     private function rebuildArrayForDropDown($listModels) {
         $rebuildedArray = array();
-        foreach ($listModels as $id => $modelData) {
+        foreach ($listModels as $modelData) {
             switch($modelData->tableName()){
-                case 'cars': $rebuildedArray[$id] = $modelData->mark . '. Остаток(' . $modelData->count_cars . ')'; break;
-                case '{{%user}}': $rebuildedArray[$id] = $modelData->username; break;
-                default: $rebuildedArray[$id] = $modelData->name; break;
+                case 'cars': $rebuildedArray[$modelData->id] = $modelData->mark . '. Остаток(' . $modelData->count_cars . ')'; break;
+                case '{{%user}}': $rebuildedArray[$modelData->id] = $modelData->username; break;
+                default: $rebuildedArray[$modelData->id] = $modelData->name; break;
             }
             
         }
@@ -112,9 +118,17 @@ class AdvertController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
+        
+        $cars = Cars::find()->where(['>', 'count_cars', 0])->all();
+        $cars = $this->rebuildArrayForDropDown($cars);
+        
+        $users = User::find()->all();
+        $users = $this->rebuildArrayForDropDown($users);
 
         return $this->render('update', [
             'model' => $model,
+            'cars'  => $cars,
+            'users' => $users,
         ]);
     }
 

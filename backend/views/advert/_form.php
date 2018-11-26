@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
     
     <?= $form->field($model, 'author_id')->dropDownList($users, ['multiple'=>'multiple', 'class' => 'form-control', 'style' => 'height:200px;']); ?>
     
-    <?= $form->field($model, 'author_id')->textInput() ?>
+    <?php // $form->field($model, 'author_id')->textInput() ?>
 
     <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
 
