@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: block;
 }
 #gtco-header .form-wrap .tab-content .form-control {
-  color: #fff !important;
+  /*color: #fff !important;*/
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -1710,7 +1710,7 @@ form label {
   overflow: hidden;
   z-index: 9;
   bottom: 0;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
   -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
   -ms-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
@@ -1957,3 +1957,13 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.response-subscribe.success{
+    color: greenyellow;
+}
+.response-subscribe.error{
+    color: greenyellow;
+}
+.btn.detail{
+    margin-bottom: 20px;
+}

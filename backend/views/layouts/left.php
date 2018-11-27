@@ -5,10 +5,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                <img src="<?= Yii::getAlias('@uploads') . '/uploads/didenko.jpg' ?>" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>Aliona Didenko</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -34,7 +34,6 @@
                     ['label' => 'Объявления', 'icon' => 'file-code-o', 'url' => ['/advert']],
                     ['label' => 'Автомобили', 'icon' => 'file-code-o', 'url' => ['/cars']],
                     ['label' => 'Модели авто', 'icon' => 'file-code-o', 'url' => ['/models-car']],
-                    ['label' => 'Объявления', 'icon' => 'file-code-o', 'url' => ['/advert']],
                     ['label' => 'Типы кузовов', 'icon' => 'file-code-o', 'url' => ['/body-types']],
                     ['label' => 'Категории', 'icon' => 'file-code-o', 'url' => ['/categories']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],

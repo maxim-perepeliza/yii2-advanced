@@ -105,9 +105,10 @@ class CarsController extends Controller
 
                         if ($imageCar->file && $imageCar->validate()) {                
                             $imageCar->file->saveAs('uploads/' . $imageCar->file->baseName . '.' . $imageCar->file->extension);
+                            $model->file_path = 'uploads/' . $imageCar->file->baseName . '.' . $imageCar->file->extension;
                         }
                     }
-                    
+
                     if (!($flag = $modelBody->save(false))) {
                         $transaction->rollBack();
                     }

@@ -33,7 +33,7 @@ use yii\helpers\Html;
                                 <li><!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
+                                            <img src="<?= Yii::getAlias('@uploads') . '/uploads/didenko.jpg' ?>" class="img-circle"
                                                  alt="User Image"/>
                                         </div>
                                         <h4>
@@ -229,18 +229,18 @@ use yii\helpers\Html;
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <img src="<?= Yii::getAlias('@uploads') . '/uploads/didenko.jpg' ?>" class="user-image" alt="User Image"/>
+                        <span class="hidden-xs">Aliona Didenko</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
+                            <img src="<?= Yii::getAlias('@uploads') . '/uploads/didenko.jpg' ?>" class="img-circle"
                                  alt="User Image"/>
 
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                Aliona Didenko - Web Developer
+                                <small>Member since Nov. 2018</small>
                             </p>
                         </li>
                         <!-- Menu Body -->

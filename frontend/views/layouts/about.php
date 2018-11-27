@@ -4,14 +4,11 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
 use yii\bootstrap\ActiveForm;
-use yii\captcha\Captcha;
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -23,7 +20,7 @@ use yii\captcha\Captcha;
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>About. BeryAvto</title>
+	<title>About</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -88,7 +85,7 @@ use yii\captcha\Captcha;
 			
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="<?= Yii::$app->getHomeUrl(); ?>">BeryAvto <em>.</em></a></div>
+					<div id="gtco-logo"><a href="<?= Yii::$app->getHomeUrl(); ?>">BeryAvto <em></em></a></div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
@@ -211,7 +208,7 @@ use yii\captcha\Captcha;
 			</div>
 		</div>
 	</div>
-
+        
 	<div id="gtco-subscribe">
 		<div class="gtco-container">
 			<div class="row animate-box">
@@ -222,17 +219,9 @@ use yii\captcha\Captcha;
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2">
-					<form class="form-inline">
-						<div class="col-md-6 col-sm-6">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Your Email">
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<button type="submit" class="btn btn-default btn-block">Subscribe</button>
-						</div>
-					</form>
+                                    <?=
+                                        $content
+                                    ?>	
 				</div>
 			</div>
 		</div>

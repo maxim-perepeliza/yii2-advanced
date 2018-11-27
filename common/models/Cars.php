@@ -26,6 +26,7 @@ use Yii;
  * @property int $image_id
  * @property string $date_create
  * @property string $date_create_utc
+ * @property string $file_path
  * @property int $deleted
  *
  * @property Advert[] $adverts
@@ -53,7 +54,7 @@ class Cars extends \yii\db\ActiveRecord
     {
         return [
             [['mark', 'transmition', 'count_doors', 'count_seats', 'body_type_id', 'engine_capacity', 'fuel_type', 'engine_power', 'fuel_consumption', 'conditioner_available', 'category_id', 'model_id', 'count_cars', 'amount_deposit', 'date_create'], 'required'],
-            [['date_release', 'date_create', 'date_create_utc', 'image_id'], 'safe'],
+            [['date_release', 'date_create', 'date_create_utc', 'image_id', 'file_path'], 'safe'],
             [['count_doors', 'count_seats', 'body_type_id', 'category_id', 'model_id', 'count_cars', 'amount_deposit', 'image_id', 'deleted'], 'integer'],
             [['mark'], 'string', 'max' => 30],
             [['transmition', 'fuel_type', 'fuel_consumption'], 'string', 'max' => 15],
@@ -61,6 +62,7 @@ class Cars extends \yii\db\ActiveRecord
             [['body_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => BodyTypes::className(), 'targetAttribute' => ['body_type_id' => 'id']],
             [['model_id'], 'exist', 'skipOnError' => true, 'targetClass' => ModelsCar::className(), 'targetAttribute' => ['model_id' => 'id']],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::className(), 'targetAttribute' => ['category_id' => 'id']],
+            [['file_path'], 'string', 'max' => 255],
         ];
     }
 

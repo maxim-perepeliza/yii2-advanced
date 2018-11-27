@@ -9,7 +9,8 @@ return [
 	    'enablePrettyUrl' => true,
 	    'showScriptName' => false,
 	    'rules' => [
-		'' => 'site/index',                                
+//		'' => 'site/index',                                
+		'' => 'site/auto-list',                                
 		'<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 	    ],
 	],

@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'model_id',
             'count_cars',
             'amount_deposit',
-            'image_id',
+            'file_path',
             'date_create',
             'date_create_utc',
             'deleted',

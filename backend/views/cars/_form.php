@@ -168,6 +168,11 @@ $uploadForm = new UploadForm();
     <?= $form->field($model, 'amount_deposit')->textInput() ?>
 
     <?php // $form->field($model, 'image_id')->textInput() ?>
+
+    <?= Html::img(Yii::getAlias('@uploads') . '/' . $model->file_path, [
+        'alt' => $model->id,
+        'class' => 'image-car'
+    ]) ?>
     
     <?= $form->field($uploadForm, 'file')->fileInput() ?>
 
