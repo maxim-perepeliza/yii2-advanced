@@ -102,7 +102,7 @@ use common\widgets\AutoFilter;
 		</div>
 	</nav>
 	
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(/themes/savory/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url('/themes/savory/images/img_bg_1.jpg')" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container">
                 <div class="row">
@@ -133,7 +133,7 @@ use common\widgets\AutoFilter;
 		</div>
 	</header>
 	<?= $content ?>
-	<footer id="gtco-footer" role="contentinfo" style="background-image: url(/themes/savory/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+	<footer id="gtco-footer" role="contentinfo" style="background-image: url('/themes/savory/images/img_bg_1.jpg')" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row row-pb-md">

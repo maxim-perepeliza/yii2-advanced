@@ -41,13 +41,13 @@ use yii\bootstrap\ActiveForm;
                             <p><span class="price cursive-font">$<?= $advert->price_per_hour ?></span></p>
                         </div>
                     </a>
-                    <a href="" class="btn btn-primary detail">Подробнее</a>
+                    <a href="/site/advert?id=<?= $advert->id ?>" class="btn btn-primary detail">Подробнее</a>
                 </div>
             <?php endforeach; ?>    
         </div>
     </div>
 </div>
-<div class="gtco-cover gtco-cover-sm" style="background-image: url(/themes/savory/images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
+<div class="gtco-cover gtco-cover-sm" style="background-image: url('/themes/savory/images/img_bg_1.jpg')"  data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="gtco-container text-center">
         <div class="display-t">

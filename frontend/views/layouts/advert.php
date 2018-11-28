@@ -1,3 +1,15 @@
+<?php
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+use yii\helpers\Html;
+use yii\widgets\Breadcrumbs;
+use frontend\assets\AppAsset;
+use common\widgets\Alert;
+
+use yii\bootstrap\ActiveForm;
+?>
 <!DOCTYPE HTML>
 <!--
 	Aesthetic by gettemplates.co
@@ -8,7 +20,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Savory &mdash; Free Website Template, Free HTML5 Template by GetTemplates.co</title>
+	<title>Advert</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -29,31 +41,31 @@
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="/themes/savory/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="/themes/savory/css/icomoon.css">
 	<!-- Themify Icons-->
-	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="/themes/savory/css/themify-icons.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="/themes/savory/css/bootstrap.css">
 
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="/themes/savory/css/magnific-popup.css">
 
 	<!-- Bootstrap DateTimePicker -->
-	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="/themes/savory/css/bootstrap-datetimepicker.min.css">
 
 
 
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/themes/savory/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/themes/savory/css/owl.theme.default.min.css">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/themes/savory/css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="/themes/savory/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -73,21 +85,19 @@
 			
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.html">Savory <em>.</em></a></div>
+					<div id="gtco-logo"><a href="<?= Yii::$app->getHomeUrl(); ?>">BeryAvto <em></em></a></div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li><a href="menu.html">Menu</a></li>
-						<li class="has-dropdown active">
-							<a href="services.html">Services</a>
+						<li><a href="/site/auto-list">Catalog cars</a></li>
+						<li class="has-dropdown">
+							<a href="#">Services</a>
 							<ul class="dropdown">
-								<li><a href="#">Food Catering</a></li>
-								<li><a href="#">Wedding Celebration</a></li>
-								<li><a href="#">Birthday's Celebration</a></li>
+								<li><a href="/site/auto-find">Find Auto</a></li>
 							</ul>
 						</li>
-						<li><a href="contact.html">Contact</a></li>
-						<li class="btn-cta"><a href="#"><span>Reservation</span></a></li>
+						<li><a href="/contact">Contact</a></li>
+						<li class="btn-cta active"><a href="/about"><span>Our services</span></a></li>
 					</ul>	
 				</div>
 			</div>
@@ -104,8 +114,8 @@
 
 					<div class="row row-mt-15em">
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<span class="intro-text-small">Hand-crafted by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a></span>
-							<h1 class="cursive-font">It's our pleasure to serve!</h1>	
+							<span class="intro-text-small">Our site <a href="#" target="_blank">BeryAvto</a></span>
+							<h1 class="cursive-font">Invites you to take the wheels!</h1>	
 						</div>
 						
 					</div>
@@ -198,7 +208,7 @@
 			</div>
 		</div>
 	</div>
-
+        
 	<div id="gtco-subscribe">
 		<div class="gtco-container">
 			<div class="row animate-box">
@@ -209,17 +219,9 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2">
-					<form class="form-inline">
-						<div class="col-md-6 col-sm-6">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Your Email">
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<button type="submit" class="btn btn-default btn-block">Subscribe</button>
-						</div>
-					</form>
+                                    <?=
+                                        $content
+                                    ?>	
 				</div>
 			</div>
 		</div>
@@ -273,32 +275,31 @@
 	</div>
 	
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="/themes/savory/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="/themes/savory/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="/themes/savory/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="/themes/savory/js/jquery.waypoints.min.js"></script>
 	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
+	<script src="/themes/savory/js/owl.carousel.min.js"></script>
 	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
+	<script src="/themes/savory/js/jquery.countTo.js"></script>
 
 	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="/themes/savory/js/jquery.stellar.min.js"></script>
 
 	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
+	<script src="/themes/savory/js/jquery.magnific-popup.min.js"></script>
+	<script src="/themes/savory/js/magnific-popup-options.js"></script>
 	
-	<script src="js/moment.min.js"></script>
-	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/themes/savory/js/moment.min.js"></script>
+	<script src="/themes/savory/js/bootstrap-datetimepicker.min.js"></script>
 
 
 	<!-- Main -->
-	<script src="js/main.js"></script>
+	<script src="/themes/savory/js/main.js"></script>
 
 	</body>
 </html>
-

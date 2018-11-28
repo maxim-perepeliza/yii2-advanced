@@ -340,5 +340,31 @@ class SiteController extends Controller {
         $this->enableCsrfValidation = ($action->id == "get-models-car")?false:true;
         return parent::beforeAction($action);
     }
+    
+    public function actionAdvert($id) {
+        $this->layout = 'advert';
+        $subscribeForm = new SubscribeForm();
+        if ($subscribeForm->load(Yii::$app->request->post()) && $subscribeForm->validate()) {
+            if ($subscribeForm->sendEmail(Yii::$app->params['adminEmail'])) {
+                Yii::$app->session->setFlash('success', 'Thank you for subscribing us. We will respond to you as soon as possible.');
+                $response = 'Thank you for subscribing us. We will respond to you as soon as possible.';
+                $status = 'success';
+            } else {
+                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                $response = 'There was an error sending your message.';
+                $status = 'error';
+            }
+            return $this->render('advert', [
+                        'subscribeForm' => $subscribeForm,
+                        'response' => $response,
+                        'status' => $status
+            ]);
+        } else {
+            return $this->render('advert', [
+                        'subscribeForm' => $subscribeForm
+            ]);
+        }
+        
+    }
 
 }
