@@ -18,11 +18,11 @@ use yii\bootstrap\ActiveForm;
   <?php */ ?>
 <?php $form = ActiveForm::begin(['id' => 'subscribe-form', 'options' => ['class' => 'form-inline']]); ?>
 <div class="col-md-12 col-sm-12">
-    <?= $form->field($subscribeForm, 'email')->input('email', ['autofocus' => false, 'placeholder' => 'Your e-mail address'])->label('') ?>
+    <?= $form->field($subscribeForm, 'email')->input('email', ['autofocus' => false, 'placeholder' => 'Ваш e-mail'])->label('') ?>
 </div>
 <div class="col-md-12 col-sm-12">
     <div class="form-group">
-        <?= Html::submitButton('Subscribe', ['class' => 'btn btn-default btn-block btn-primary', 'name' => 'subscribe-button']) ?>
+        <?= Html::submitButton('Подписаться', ['class' => 'btn btn-default btn-block btn-primary', 'name' => 'subscribe-button']) ?>
     </div>
 </div>
 <?php if (isset($status) && isset($response)): ?>

@@ -21,8 +21,8 @@ use yii\bootstrap\ActiveForm;
     <div class="gtco-container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                <h2 class="cursive-font primary-color">Popular Dishes</h2>
-                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                <h2 class="cursive-font primary-color">Только сегодня и только сейчас</h2>
+                <p>для Вас доступны следующие модели автомобилей</p>
             </div>
         </div>
         <div class="row">
@@ -47,54 +47,80 @@ use yii\bootstrap\ActiveForm;
 </div>
 
 <div id="gtco-features">
-    <div class="gtco-container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-                <h2 class="cursive-font">Our Services</h2>
-                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <div class="feature-center animate-box" data-animate-effect="fadeIn">
-                    <span class="icon">
-                        <i class="ti-face-smile"></i>
-                    </span>
-                    <h3>Happy People</h3>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="feature-center animate-box" data-animate-effect="fadeIn">
-                    <span class="icon">
-                        <i class="ti-thought"></i>
-                    </span>
-                    <h3>Creative Culinary</h3>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="feature-center animate-box" data-animate-effect="fadeIn">
-                    <span class="icon">
-                        <i class="ti-truck"></i>
-                    </span>
-                    <h3>Food Delivery</h3>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                </div>
-            </div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+					<h2 class="cursive-font">Мы предоставляем</h2>
+					<p></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="ti-write"></i>
+						</span>
+						<h3>Cтраховка авто</h3>
+						<p>Путешествуйте спокойно и безопасно – мы берем все риски на себя, ведь весь парк авто, который мы предлагаем, полностью застрахован.</p>
+					</div>
+				</div>     
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="ti-signal"></i>
+						</span>
+						<h3>Помощь в дороге</h3>
+						<p>Закончился запас топлива? Нужно поменять колесо или зарядить аккумулятор? Дайте нам знать и наши специалисты приедут и помогут вам.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="ti-headphone"></i>
+						</span>
+						<h3>Консьерж-сервис</h3>
+						<p>Круглосуточная поддержка с любыми вопросами, будь то бронирование отелей или поиск лучших туров и товаров.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="ti-rss"></i>
+						</span>
+						<h3>Wi-Fi интернет</h3>
+						<p>Оставайтесь на связи и будьте в курсе всего происходящего со скоростным Wi-Fi интернетом.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="ti-location-pin"></i>
+						</span>
+						<h3>GPS - навигатор</h3>
+						<p>Не теряйтесь и экономьте время с помощью GPS-навигатора, который подскажет Вам оптимальный маршрут.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="ti-home"></i>
+						</span>
+						<h3>Детское кресло</h3>
+						<p>Путешествуете с детьми? Обезопасьте своих малышей с помощью комфортного детского кресла.</p>
+					</div>
+				</div>
 
-
-        </div>
-    </div>
-</div>
+			</div>
+		</div>
+	</div>
 
 <div class="gtco-cover gtco-cover-sm" style="background-image: url('/themes/savory/images/img_bg_1.jpg')"  data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="gtco-container text-center">
         <div class="display-t">
             <div class="display-tc">
-                <h1>&ldquo; Their high quality of service makes me back over and over again!&rdquo;</h1>
-                <p>&mdash; John Doe, CEO of XYZ Co.</p>
+                <h1>&ldquo; Первый раз на Украине взял авто на прокат, спасибо за отличный сервис! &rdquo;</h1>
+                <p>&mdash; Иванов Степан, 2018-09-20</p>
             </div>	
         </div>
     </div>
@@ -105,8 +131,8 @@ use yii\bootstrap\ActiveForm;
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-                <h2 class="cursive-font primary-color">Fun Facts</h2>
-                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                <h2 class="cursive-font primary-color">Факты, что убеждают</h2>
+                <p></p>
             </div>
         </div>
 
@@ -114,27 +140,27 @@ use yii\bootstrap\ActiveForm;
 
             <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                 <div class="feature-center">
-                    <span class="counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50">1</span>
-                    <span class="counter-label">Avg. Rating</span>
+                    <span class="counter js-counter" data-from="0" data-to="4" data-speed="5000" data-refresh-interval="50">1</span>
+                    <span class="counter-label">Средний рейтинг отзывов</span>
 
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                 <div class="feature-center">
                     <span class="counter js-counter" data-from="0" data-to="43" data-speed="5000" data-refresh-interval="50">1</span>
-                    <span class="counter-label">Food Types</span>
+                    <span class="counter-label">Автопарк</span>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                 <div class="feature-center">
                     <span class="counter js-counter" data-from="0" data-to="32" data-speed="5000" data-refresh-interval="50">1</span>
-                    <span class="counter-label">Chef Cook</span>
+                    <span class="counter-label">Сдано в аренду сегодня</span>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                 <div class="feature-center">
                     <span class="counter js-counter" data-from="0" data-to="1985" data-speed="5000" data-refresh-interval="50">1</span>
-                    <span class="counter-label">Year Started</span>
+                    <span class="counter-label">Все пользовались</span>
 
                 </div>
             </div>
@@ -149,19 +175,19 @@ use yii\bootstrap\ActiveForm;
     <div class="gtco-container">
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                <h2 class="cursive-font">Subscribe</h2>
-                <p>Be the first to know about the new templates.</p>
+                <h2 class="cursive-font">Подписаться</h2>
+                <p>Узнавайте первым о новинках</p>
             </div>
         </div>
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2">
                 <?php $form = ActiveForm::begin(['id' => 'subscribe-form', 'options' => ['class' => 'form-inline']]); ?>
                 <div class="col-md-12 col-sm-12">
-                    <?= $form->field($subscribeForm, 'email')->input('email', ['autofocus' => false, 'placeholder' => 'Your e-mail address'])->label('') ?>
+                    <?= $form->field($subscribeForm, 'email')->input('email', ['autofocus' => false, 'placeholder' => 'Ваш e-mail'])->label('') ?>
                 </div>
                 <div class="col-md-12 col-sm-12">
                     <div class="form-group">
-                        <?= Html::submitButton('Subscribe', ['class' => 'btn btn-default btn-block btn-primary', 'name' => 'subscribe-button']) ?>
+                        <?= Html::submitButton('Подписаться', ['class' => 'btn btn-default btn-block btn-primary', 'name' => 'subscribe-button']) ?>
                     </div>
                 </div>
                 <?php if (isset($status) && isset($response)): ?>

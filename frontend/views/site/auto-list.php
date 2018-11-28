@@ -23,8 +23,8 @@ use yii\bootstrap\ActiveForm;
     <div class="gtco-container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                <h2 class="cursive-font primary-color">Popular Cars</h2>
-                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                <h2 class="cursive-font primary-color">Популярные авто</h2>
+                <p>Аренда автомобилей в Харькове. Круглосуточный прием заказов. Подача авто в любую точку Харькова.</p>
             </div>
         </div>
         <div class="row">
@@ -52,8 +52,8 @@ use yii\bootstrap\ActiveForm;
     <div class="gtco-container text-center">
         <div class="display-t">
             <div class="display-tc">
-                <h1>&ldquo; Their high quality of service makes me back over and over again!&rdquo;</h1>
-                <p>&mdash; John Doe, CEO of XYZ Co.</p>
+                <h1>&ldquo; Первый раз на Украине взял авто на прокат, спасибо за отличный сервис! &rdquo;</h1>
+                <p>&mdash; Иванов Степан, 2018-09-20</p>
             </div>	
         </div>
     </div>
@@ -62,19 +62,19 @@ use yii\bootstrap\ActiveForm;
     <div class="gtco-container">
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                <h2 class="cursive-font">Subscribe</h2>
-                <p>Be the first to know about the new templates.</p>
+                <h2 class="cursive-font">Подписаться</h2>
+                <p>Узнавайте первым о новинках</p>
             </div>
         </div>
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2">
                 <?php $form = ActiveForm::begin(['id' => 'subscribe-form', 'options' => ['class' => 'form-inline']]); ?>
                 <div class="col-md-12 col-sm-12">
-                    <?= $form->field($subscribeForm, 'email')->input('email', ['autofocus' => false, 'placeholder' => 'Your e-mail address'])->label('') ?>
+                    <?= $form->field($subscribeForm, 'email')->input('email', ['autofocus' => false, 'placeholder' => 'Ваш e-mail'])->label('') ?>
                 </div>
                 <div class="col-md-12 col-sm-12">
                     <div class="form-group">
-                        <?= Html::submitButton('Subscribe', ['class' => 'btn btn-default btn-block btn-primary', 'name' => 'subscribe-button']) ?>
+                        <?= Html::submitButton('Подписаться', ['class' => 'btn btn-default btn-block btn-primary', 'name' => 'subscribe-button']) ?>
                     </div>
                 </div>
                 <?php if (isset($status) && isset($response)): ?>

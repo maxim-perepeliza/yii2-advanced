@@ -21,7 +21,7 @@ use common\widgets\AutoFilter;
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Auto Find</title>
+	<title>Поиск авто</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -87,16 +87,16 @@ use common\widgets\AutoFilter;
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-                                            <li><a href="/site/auto-list">Catalog cars</a></li>
-						<li class="has-dropdown active">
-							<a href="#">Services</a>
+						<li><a href="/site/auto-list">Каталог</a></li>
+						<li class="has-dropdown">
+							<a href="#">Сервис</a>
 							<ul class="dropdown">
-                                                            <li class="active"><a href="/site/auto-find">Find Auto</a></li>
+                                                            <li class="active"><a href="/site/auto-find">Поиск авто</a></li>
 							</ul>
 						</li>
-						<li><a href="/contact">Contact</a></li>
-						<li class="btn-cta"><a href="/about"><span>Our services</span></a></li>
-					</ul>	
+						<li><a href="/contact">Контакты</a></li>
+						<li class="btn-cta"><a href="/about"><span>О нас</span></a></li>
+					</ul>		
 				</div>
 			</div>
 		</div>
@@ -109,8 +109,8 @@ use common\widgets\AutoFilter;
 		<div class="col-md-12 col-md-offset-0 text-left">
                     <div class="row row-mt-15em">
                         <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-                            <span class="intro-text-small">Hand-crafted by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a></span>
-                            <h1 class="cursive-font">All in good taste!</h1>	
+                            <span class="intro-text-small"><a href="http://gettemplates.co" target="_blank"></a></span>
+                            <h1 class="cursive-font">Авто то, что надо!</h1>	
 			</div>
 			<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
 			<div class="form-wrap">
@@ -137,21 +137,17 @@ use common\widgets\AutoFilter;
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row row-pb-md">
-
-				
-
-				
 				<div class="col-md-12 text-center">
 					<div class="gtco-widget">
-						<h3>Get In Touch</h3>
+						<h3>Связаться</h3>
 						<ul class="gtco-quick-contact">
-							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
-							<li><a href="#"><i class="icon-mail2"></i> info@GetTemplates.co</a></li>
+							<li><a href="#"><i class="icon-phone"></i> +380505478956</a></li>
+							<li><a href="#"><i class="icon-mail2"></i> aliona.didenko@gmail.com</a></li>
 							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
 						</ul>
 					</div>
 					<div class="gtco-widget">
-						<h3>Get Social</h3>
+						<h3>Мы в соцсетях</h3>
 						<ul class="gtco-social-icons">
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
@@ -160,16 +156,11 @@ use common\widgets\AutoFilter;
 						</ul>
 					</div>
 				</div>
-
 				<div class="col-md-12 text-center copyright">
-					<p><small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small></p>
+					<p><small class="block">&copy; 2018 Free HTML5. All Rights Reserved.</small> 
+						<small class="block"> <a href="http://gettemplates.co/" target="_blank"></a> <a href="http://unsplash.com/" target="_blank"></a></small></p>
 				</div>
-
 			</div>
-
-			
-
 		</div>
 	</footer>
 	<!-- </div> -->

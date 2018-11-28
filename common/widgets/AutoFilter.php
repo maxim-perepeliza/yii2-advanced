@@ -28,13 +28,13 @@ class AutoFilter extends \yii\bootstrap\Widget {
         $marks = $command->queryAll();
 
         $widgetHtml = '';
-        $widgetHtml .= '<h3 class="cursive-font">Finding the right car</h3>';
+        $widgetHtml .= '<h3 class="cursive-font">Подыщите для себя авто сами</h3>';
         $widgetHtml .= '<form action="/site/auto-find" method="GET">';
         $widgetHtml .= '<div class="row form-group">';
         $widgetHtml .= '<div class="col-md-12">';
-        $widgetHtml .= '<label for="activities">Brand</label>';
+        $widgetHtml .= '<label for="activities">Марка</label>';
         $widgetHtml .= '<select name="brand_car" id="brand_auto" class="form-control brand-auto">';
-        $widgetHtml .= '<option value="">All brands</option>';
+        $widgetHtml .= '<option value="">Все</option>';
         foreach ($marks as $mark) {
             $selected = false;
             if (Yii::$app->request->get('brand_car') == $mark['mark']) {
@@ -49,7 +49,7 @@ class AutoFilter extends \yii\bootstrap\Widget {
         $widgetHtml .= '</div>';
         $widgetHtml .= '<div class="row form-group">';
         $widgetHtml .= '<div class="col-md-12">';
-        $widgetHtml .= '    <label for="date-start">Model</label>';
+        $widgetHtml .= '    <label for="date-start">Модель</label>';
         $widgetHtml .= '<select name="model_car" id="model_auto" class="form-control model-auto">';
         if (!empty(Yii::$app->request->get('brand_car'))) {
             $connection = Yii::$app->getDb();

@@ -220,6 +220,19 @@ class SiteController extends Controller {
                 $sqlGetAdvert = 'SELECT * FROM advert WHERE car_id in ('. implode($carIds, ',') .')';
                 $adverts = Advert::findBySql($sqlGetAdvert)->all();
             }
+        }else{
+            $sqlCarIds = 'SELECT cars.id FROM `cars`';
+             $connection = Yii::$app->getDb();
+            $command = $connection->createCommand($sqlCarIds);
+            $result = $command->queryAll();
+            $carIds = array();
+            foreach ($result as $row) {
+                $carIds[] = $row['id'];
+            }
+            if(!empty($carIds)){
+                $sqlGetAdvert = 'SELECT * FROM advert WHERE car_id in ('. implode($carIds, ',') .')';
+                $adverts = Advert::findBySql($sqlGetAdvert)->all();
+            }
         }
         
         if ($subscribeForm->load(Yii::$app->request->post()) && $subscribeForm->validate()) {
