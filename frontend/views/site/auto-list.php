@@ -27,7 +27,7 @@ use yii\bootstrap\ActiveForm;
                 <p>Аренда автомобилей в Харькове. Круглосуточный прием заказов. Подача авто в любую точку Харькова.</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row fix-bootstrap">
             <?php foreach ($adverts as $advert): ?>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <a href="<?= Yii::getAlias('@uploads') . '/' . $advert->car->file_path ?>" class="fh5co-card-item image-popup">

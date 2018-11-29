@@ -25,7 +25,7 @@ use yii\bootstrap\ActiveForm;
                 <p>для Вас доступны следующие модели автомобилей</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row fix-bootstrap">
             <?php foreach($adverts as $advert): ?>
             <div class="col-lg-4 col-md-4 col-sm-6">
                     <a href="<?= Yii::getAlias('@uploads') . '/' . $advert->car->file_path ?>" class="fh5co-card-item image-popup">
@@ -54,7 +54,7 @@ use yii\bootstrap\ActiveForm;
 					<p></p>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row fix-bootstrap">
 				<div class="col-md-4 col-sm-6">
 					<div class="feature-center animate-box" data-animate-effect="fadeIn">
 						<span class="icon">

@@ -1967,3 +1967,7 @@ form label {
 .btn.detail{
     margin-bottom: 20px;
 }
+.fix-bootstrap{
+    display: flex;
+    flex-wrap: wrap;
+}
