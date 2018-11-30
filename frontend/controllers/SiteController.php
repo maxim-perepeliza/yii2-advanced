@@ -379,5 +379,25 @@ class SiteController extends Controller {
         }
         
     }
+    
+    /**
+     * Displays public offert page.
+     *
+     * @return mixed
+     */
+    public function actionPublicOffert() {
+        $this->layout = 'public-offert';
+        return $this->render('public-offert');
+    }
+    
+    /**
+     * Displays info for customers page.
+     *
+     * @return mixed
+     */
+    public function actionInfoForCustomers() {
+        $this->layout = 'info-for-customers';
+        return $this->render('info-for-customers');
+    }
 
 }

@@ -20,7 +20,7 @@ use yii\bootstrap\ActiveForm;
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Автомобиль</title>
+	<title>Информация для клиентов</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -98,24 +98,24 @@ use yii\bootstrap\ActiveForm;
 						</li>
 						<li><a href="/contact">Контакты</a></li>
 						<li class="btn-cta active"><a href="/about"><span>О нас</span></a></li>
-					</ul>	
+					</ul>		
 				</div>
 			</div>
 			
 		</div>
 	</nav>
 	
-	<header id="gtco-header" class="gtco-cover gtco-cover-sm single-auto" role="banner" style="background-image: url(/themes/savory/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+	<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(/themes/savory/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
-		<?php /* ?><div class="gtco-container">
+		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-center">
 					
 
 					<div class="row row-mt-15em">
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<span class="intro-text-small">Our site <a href="#" target="_blank">BeryAvto</a></span>
-							<h1 class="cursive-font">Invites you to take the wheels!</h1>	
+							<span class="intro-text-small">Наш сайт <a href="#" target="_blank">BeryAvto</a></span>
+							<h1 class="cursive-font">Давайте ездить вместе!</h1>	
 						</div>
 						
 					</div>
@@ -123,16 +123,11 @@ use yii\bootstrap\ActiveForm;
 					
 				</div>
 			</div>
-		</div><?php */ ?>
+		</div>
 	</header>
 
-        <div id="gtco-advert">
-            <div class="gtco-container">
-                
-            </div>
-        </div>
 	
-	<?php /* ?>
+	
 	<div id="gtco-features">
 		<div class="gtco-container">
 			<div class="row">
@@ -207,20 +202,20 @@ use yii\bootstrap\ActiveForm;
 		<div class="gtco-container text-center">
 			<div class="display-t">
 				<div class="display-tc">
-					<h1>&ldquo; Первый раз на Украине взял авто на прокат, спасибо за отличный сервис! &rdquo;</h1>
+					<h1>&ldquo; Первый раз на Украине взял авто на прокат, спасибо за отличный сервис!  &rdquo;</h1>
                 <p>&mdash; Иванов Степан, 2018-09-20</p>
 				</div>	
 			</div>
 		</div>
 	</div>
-        <?php */ ?>
+        
 	<div id="gtco-subscribe">
 		<div class="gtco-container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                                    <h2 class="cursive-font">Подписаться</h2>
-                                    <p>Узнавайте первым о новинках</p>
-                                </div>
+                <h2 class="cursive-font">Подписаться</h2>
+                <p>Узнавайте первым о новинках</p>
+            </div>
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2">
@@ -231,7 +226,8 @@ use yii\bootstrap\ActiveForm;
 			</div>
 		</div>
 	</div>
-        <footer id="gtco-footer" role="contentinfo" style="background-image: url('/themes/savory/images/img_bg_1.jpg')" data-stellar-background-ratio="0.5">
+
+	<footer id="gtco-footer" role="contentinfo" style="background-image: url('/themes/savory/images/img_bg_1.jpg')" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row row-pb-md">
@@ -260,11 +256,11 @@ use yii\bootstrap\ActiveForm;
 						</ul>
 					</div>
                                         <div class="gtco-widget">
-						<h3>Оплачивайте с помощью</h3>
-						<ul class="gtco-social-icons">
-                                                    <image src="/themes/savory/images/Visa.png" />
-                                                    <image src="/themes/savory/images/Mastercard.png" />
-						</ul>
+                                                    <h3>Оплачивайте с помощью</h3>
+                                                    <ul class="gtco-social-icons">
+                                                        <image src="/themes/savory/images/Visa.png" />
+                                                        <image src="/themes/savory/images/Mastercard.png" />
+                                                    </ul>
                                         </div>
 				</div>
 				<div class="col-md-12 text-center copyright">

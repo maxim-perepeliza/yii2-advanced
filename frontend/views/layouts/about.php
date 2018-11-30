@@ -232,6 +232,12 @@ use yii\bootstrap\ActiveForm;
 		<div class="gtco-container">
 			<div class="row row-pb-md">
 				<div class="col-md-12 text-center">
+                                        <div class="gtco-widget">
+						<ul class="gtco-quick-contact">
+							<li><a href="/site/info-for-customers"><i class="icon-info"></i>Информация для клиентов</a></li>
+							<li><a href="/site/public-offert"><i class="icon-file"></i>Договор публичной оферты</a></li>
+						</ul>
+					</div>
 					<div class="gtco-widget">
 						<h3>Связаться</h3>
 						<ul class="gtco-quick-contact">
@@ -249,9 +255,16 @@ use yii\bootstrap\ActiveForm;
 							<li><a href="#"><i class="icon-dribbble"></i></a></li>
 						</ul>
 					</div>
+                                        <div class="gtco-widget">
+                                                    <h3>Оплачивайте с помощью</h3>
+                                                    <ul class="gtco-social-icons">
+                                                        <image src="/themes/savory/images/Visa.png" />
+                                                        <image src="/themes/savory/images/Mastercard.png" />
+                                                    </ul>
+                                        </div>
 				</div>
 				<div class="col-md-12 text-center copyright">
-					<p><small class="block">&copy; 2018 Free HTML5. All Rights Reserved.</small> 
+					<p><small class="block">&copy; <?= date('Y') ?> Free HTML5. All Rights Reserved.</small> 
 						<small class="block"> <a href="http://gettemplates.co/" target="_blank"></a> <a href="http://unsplash.com/" target="_blank"></a></small></p>
 				</div>
 			</div>

@@ -1971,3 +1971,7 @@ form label {
     display: flex;
     flex-wrap: wrap;
 }
+
+#gtco-header.single-auto{
+    height: 80px;
+}
